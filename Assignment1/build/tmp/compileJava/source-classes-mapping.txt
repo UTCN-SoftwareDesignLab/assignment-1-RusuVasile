@@ -1,0 +1,98 @@
+model/Role.java
+ model.Role
+model/UtilityBill.java
+ model.UtilityBill
+services/PDFgenerator.java
+ services.PDFgenerator
+model/builder/TransactionBuilder.java
+ model.builder.TransactionBuilder
+model/builder/UtilityBillBuilder.java
+ model.builder.UtilityBillBuilder
+services/account/AccountService.java
+ services.account.AccountService
+model/builder/AccountBuilder.java
+ model.builder.AccountBuilder
+model/validation/UserValidator.java
+ model.validation.UserValidator
+services/bill/BillService.java
+ services.bill.BillService
+model/validation/ResultFetchException.java
+ model.validation.ResultFetchException
+repositories/transaction/TransactionRepository.java
+ repositories.transaction.TransactionRepository
+database/JDBConnectionWrapper.java
+ database.JDBConnectionWrapper
+repositories/client/ClientRepositoryMySQL.java
+ repositories.client.ClientRepositoryMySQL
+Main.java
+ Main
+repositories/bill/BillRepository.java
+ repositories.bill.BillRepository
+model/User.java
+ model.User
+model/Account.java
+ model.Account
+services/client/ClientServiceImpl.java
+ services.client.ClientServiceImpl
+model/Client.java
+ model.Client
+services/user/AuthenticationServiceMySQL.java
+ services.user.AuthenticationServiceMySQL
+model/Right.java
+ model.Right
+database/DataBaseConnectionFactory.java
+ database.DataBaseConnectionFactory
+model/validation/Notification.java
+ model.validation.Notification
+services/bill/BillServiceImpl.java
+ services.bill.BillServiceImpl
+repositories/client/ClientRepository.java
+ repositories.client.ClientRepository
+repositories/user/UserRepositoryMySQL.java
+ repositories.user.UserRepositoryMySQL
+repositories/security/RightsRolesRepositoryMySQL.java
+ repositories.security.RightsRolesRepositoryMySQL
+model/Transaction.java
+ model.Transaction
+database/Constants.java
+ database.Constants
+ database.Constants$Rights
+ database.Constants$Roles
+ database.Constants$Schemas
+ database.Constants$Tables
+repositories/account/AccountRepositoryMySQL.java
+ repositories.account.AccountRepositoryMySQL
+repositories/transaction/TransactionRepositoryMySQL.java
+ repositories.transaction.TransactionRepositoryMySQL
+repositories/user/AuthenticationException.java
+ repositories.user.AuthenticationException
+repositories/security/RightsRolesRepository.java
+ repositories.security.RightsRolesRepository
+database/SQLTableCreationFactory.java
+ database.SQLTableCreationFactory
+services/user/AuthenticationService.java
+ services.user.AuthenticationService
+services/account/AccountServiceImpl.java
+ services.account.AccountServiceImpl
+model/builder/UserBuilder.java
+ model.builder.UserBuilder
+services/transaction/TransactionServiceImpl.java
+ services.transaction.TransactionServiceImpl
+repositories/bill/BillRepositoryMySQL.java
+ repositories.bill.BillRepositoryMySQL
+repositories/client/ClientRepositoryMock.java
+ repositories.client.ClientRepositoryMock
+model/builder/ClientBuilder.java
+ model.builder.ClientBuilder
+repositories/user/UserRepository.java
+ repositories.user.UserRepository
+repositories/EntityNotFoundException.java
+ repositories.EntityNotFoundException
+services/client/ClientService.java
+ services.client.ClientService
+services/transaction/TransactionService.java
+ services.transaction.TransactionService
+database/Bootstraper.java
+ database.Bootstraper
+repositories/account/AccountRepository.java
+ repositories.account.AccountRepository
