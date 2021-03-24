@@ -1,98 +1,140 @@
+services/account/AccountService.java
+ services.account.AccountService
 model/Role.java
  model.Role
 model/UtilityBill.java
  model.UtilityBill
-services/PDFgenerator.java
- services.PDFgenerator
-model/builder/TransactionBuilder.java
- model.builder.TransactionBuilder
 model/builder/UtilityBillBuilder.java
  model.builder.UtilityBillBuilder
-services/account/AccountService.java
- services.account.AccountService
-model/builder/AccountBuilder.java
- model.builder.AccountBuilder
-model/validation/UserValidator.java
- model.validation.UserValidator
-services/bill/BillService.java
- services.bill.BillService
+view/Employee/BillOperationsView.java
+ view.Employee.BillOperationsView
 model/validation/ResultFetchException.java
  model.validation.ResultFetchException
-repositories/transaction/TransactionRepository.java
- repositories.transaction.TransactionRepository
 database/JDBConnectionWrapper.java
  database.JDBConnectionWrapper
-repositories/client/ClientRepositoryMySQL.java
- repositories.client.ClientRepositoryMySQL
-Main.java
- Main
-repositories/bill/BillRepository.java
- repositories.bill.BillRepository
 model/User.java
  model.User
 model/Account.java
  model.Account
-services/client/ClientServiceImpl.java
- services.client.ClientServiceImpl
-model/Client.java
- model.Client
+services/account/AccountServiceImpl.java
+ services.account.AccountServiceImpl
 services/user/AuthenticationServiceMySQL.java
  services.user.AuthenticationServiceMySQL
 model/Right.java
  model.Right
-database/DataBaseConnectionFactory.java
- database.DataBaseConnectionFactory
 model/validation/Notification.java
  model.validation.Notification
-services/bill/BillServiceImpl.java
- services.bill.BillServiceImpl
-repositories/client/ClientRepository.java
- repositories.client.ClientRepository
+launcher/ComponentFactory.java
+ launcher.ComponentFactory
 repositories/user/UserRepositoryMySQL.java
  repositories.user.UserRepositoryMySQL
+launcher/Launcher.java
+ launcher.Launcher
 repositories/security/RightsRolesRepositoryMySQL.java
  repositories.security.RightsRolesRepositoryMySQL
 model/Transaction.java
  model.Transaction
+view/Admin/ViewAdminMain.java
+ view.Admin.ViewAdminMain
+repositories/user/AuthenticationException.java
+ repositories.user.AuthenticationException
+database/SQLTableCreationFactory.java
+ database.SQLTableCreationFactory
+services/user/AuthenticationService.java
+ services.user.AuthenticationService
+services/AdminOperations/AdminService.java
+ services.AdminOperations.AdminService
+view/Employee/ViewEmployeeMain.java
+ view.Employee.ViewEmployeeMain
+repositories/bill/BillRepositoryMySQL.java
+ repositories.bill.BillRepositoryMySQL
+repositories/account/AccountRepositoryMySQL.java
+ repositories.account.AccountRepositoryMySQL
+model/builder/ClientBuilder.java
+ model.builder.ClientBuilder
+repositories/EntityNotFoundException.java
+ repositories.EntityNotFoundException
+controllers/AdminPackage/AdminMain.java
+ controllers.AdminPackage.AdminMain
+ controllers.AdminPackage.AdminMain$CreateEmployeeListener
+ controllers.AdminPackage.AdminMain$createReport
+services/transaction/TransactionService.java
+ services.transaction.TransactionService
 database/Constants.java
  database.Constants
  database.Constants$Rights
  database.Constants$Roles
  database.Constants$Schemas
  database.Constants$Tables
-repositories/account/AccountRepositoryMySQL.java
- repositories.account.AccountRepositoryMySQL
 repositories/transaction/TransactionRepositoryMySQL.java
  repositories.transaction.TransactionRepositoryMySQL
-repositories/user/AuthenticationException.java
- repositories.user.AuthenticationException
-repositories/security/RightsRolesRepository.java
- repositories.security.RightsRolesRepository
-database/SQLTableCreationFactory.java
- database.SQLTableCreationFactory
-services/user/AuthenticationService.java
- services.user.AuthenticationService
-services/account/AccountServiceImpl.java
- services.account.AccountServiceImpl
-model/builder/UserBuilder.java
- model.builder.UserBuilder
-services/transaction/TransactionServiceImpl.java
- services.transaction.TransactionServiceImpl
-repositories/bill/BillRepositoryMySQL.java
- repositories.bill.BillRepositoryMySQL
-repositories/client/ClientRepositoryMock.java
- repositories.client.ClientRepositoryMock
-model/builder/ClientBuilder.java
- model.builder.ClientBuilder
-repositories/user/UserRepository.java
- repositories.user.UserRepository
-repositories/EntityNotFoundException.java
- repositories.EntityNotFoundException
+view/LoginView.java
+ view.LoginView
+services/PDFgenerator.java
+ services.PDFgenerator
 services/client/ClientService.java
  services.client.ClientService
-services/transaction/TransactionService.java
- services.transaction.TransactionService
-database/Bootstraper.java
- database.Bootstraper
+model/builder/TransactionBuilder.java
+ model.builder.TransactionBuilder
+Main.java
+ Main
+model/builder/AccountBuilder.java
+ model.builder.AccountBuilder
+services/bill/BillService.java
+ services.bill.BillService
+model/validation/UserValidator.java
+ model.validation.UserValidator
+repositories/transaction/TransactionRepository.java
+ repositories.transaction.TransactionRepository
+services/transaction/TransactionServiceImpl.java
+ services.transaction.TransactionServiceImpl
+repositories/security/RightsRolesRepository.java
+ repositories.security.RightsRolesRepository
+repositories/bill/BillRepository.java
+ repositories.bill.BillRepository
+services/AdminOperations/AdminServiceImpl.java
+ services.AdminOperations.AdminServiceImpl
 repositories/account/AccountRepository.java
  repositories.account.AccountRepository
+database/Bootstraper.java
+ database.Bootstraper
+model/builder/UserBuilder.java
+ model.builder.UserBuilder
+model/Client.java
+ model.Client
+database/DataBaseConnectionFactory.java
+ database.DataBaseConnectionFactory
+view/Employee/TrasactionOperationsView.java
+ view.Employee.TrasactionOperationsView
+repositories/user/UserRepository.java
+ repositories.user.UserRepository
+repositories/client/ClientRepository.java
+ repositories.client.ClientRepository
+services/client/ClientServiceImpl.java
+ services.client.ClientServiceImpl
+repositories/client/ClientRepositoryMySQL.java
+ repositories.client.ClientRepositoryMySQL
+services/bill/BillServiceImpl.java
+ services.bill.BillServiceImpl
+controllers/LoginController.java
+ controllers.LoginController
+ controllers.LoginController$LoginButtonListener
+ controllers.LoginController$RegisterButtonListener
+controllers/EmployeePackage/ClientOperationsController.java
+ controllers.EmployeePackage.ClientOperationsController
+ controllers.EmployeePackage.ClientOperationsController$CreateClientListener
+ controllers.EmployeePackage.ClientOperationsController$ViewClientsListener
+view/Employee/ClientOperationsView.java
+ view.Employee.ClientOperationsView
+view/Employee/AccountOperationsView.java
+ view.Employee.AccountOperationsView
+controllers/EmployeePackage/EmployeeMain.java
+ controllers.EmployeePackage.EmployeeMain
+ controllers.EmployeePackage.EmployeeMain$AccountOp
+ controllers.EmployeePackage.EmployeeMain$BillOp
+ controllers.EmployeePackage.EmployeeMain$ClientOp
+ controllers.EmployeePackage.EmployeeMain$TransactionOp
+controllers/EmployeePackage/AccountOperationsController.java
+ controllers.EmployeePackage.AccountOperationsController
+ controllers.EmployeePackage.AccountOperationsController$CreateAccountListener
+ controllers.EmployeePackage.AccountOperationsController$ViewAccountsListener

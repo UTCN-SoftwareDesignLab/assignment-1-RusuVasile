@@ -32,6 +32,23 @@ public class AccountRepositoryMySQL implements AccountRepository{
         return accounts;
     }
 
+    @Override
+    public List<String> findAllIds() {
+        Connection connection=connectionWrapper.getConnection();
+        List<String> ids=new ArrayList<>();
+        String sql="Select * from accounts";
+        try {
+            Statement statement=connection.createStatement();
+            ResultSet resultSet=statement.executeQuery(sql);
+
+            while (resultSet.next()){
+                ids.add("Account Nr:"+getAccountFromResultSet(resultSet).getId().toString());
+            }
+        }catch (SQLException throwables){throwables.printStackTrace();}
+
+        return ids;
+    }
+
 
     @Override
     public Account findById(Long id) throws EntityNotFoundException, EntityNotFoundException {
@@ -89,6 +106,20 @@ public class AccountRepositoryMySQL implements AccountRepository{
             return false;
         }
     }
+
+    @Override
+    public void removeById(Long id) {
+        Connection connection=connectionWrapper.getConnection();
+        String sql="DELETE from accounts where id = "+id;
+
+        try{
+            Statement statement=connection.createStatement();
+            statement.executeUpdate(sql);
+        }catch (SQLException throwables){throwables.printStackTrace();}
+
+
+    }
+
     @Override
     public void addToSoldById(Long id,Integer toAdd){
         try {
@@ -120,7 +151,7 @@ public class AccountRepositoryMySQL implements AccountRepository{
         }
 
     }
-    @Override
+
     public Integer getSoldById(Long id) throws SQLException, EntityNotFoundException {
         try {
             Connection connection = connectionWrapper.getConnection();

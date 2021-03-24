@@ -13,7 +13,8 @@ import repositories.transaction.TransactionRepository;
 import repositories.transaction.TransactionRepositoryMySQL;
 import repositories.user.UserRepository;
 import repositories.user.UserRepositoryMySQL;
-import services.PDFgenerator;
+import services.AdminOperations.AdminService;
+import services.AdminOperations.AdminServiceImpl;
 import services.bill.BillService;
 import services.bill.BillServiceImpl;
 import services.transaction.TransactionService;
@@ -25,7 +26,6 @@ import java.io.FileNotFoundException;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.text.ParseException;
-import java.util.Date;
 
 public class Main {
     private static  ClientRepository clientRepository;
@@ -50,6 +50,9 @@ public class Main {
         );
         TransactionService transactionService=new TransactionServiceImpl(transactionRepository,accountRepository);
         BillService billService=new BillServiceImpl(billRepository,accountRepository);
+        AdminService adminService=new AdminServiceImpl(billRepository,transactionRepository,authenticationService);
+        adminService.createEmployee(TEST_USERNAME,TEST_PASSWORD);
+     //   System.out.println(Long.parseLong("Account nr:123".substring(11)));
         /*
         Client client1=new ClientBuilder().setName("Client1").setAddress("Address1").setCNP(1L).build();
         Client client2=new ClientBuilder().setName("Client2").setAddress("Address2").setCNP(2L).build();
@@ -124,14 +127,14 @@ public class Main {
         billService.addBill(utilityBill2);
 
          */
-        Date date1=new Date(110,8,21);
-        Date date2=new Date(121,3,21);
-        PDFgenerator pdFgenerator=new PDFgenerator(12L,date1,date2,billRepository,transactionRepository);
-        pdFgenerator.generateReport();
-
-
+      //  Date date1=new Date(110,8,21);
+      //  System.out.println(date1);
+       // Date date2=new Date(121,3,21);
+      //  PDFgenerator pdFgenerator=new PDFgenerator(12L,date1,date2,billRepository,transactionRepository);
+      //  pdFgenerator.generateReport();
 
 
 
     }
+
 }

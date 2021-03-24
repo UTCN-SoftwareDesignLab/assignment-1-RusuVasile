@@ -9,6 +9,8 @@ public interface AccountService {
 
     List<Account> viewAll();
 
+    List <String> findIds();
+
     List<Account> viewByClientId(Long client_id) throws EntityNotFoundException;
 
     Account viewById(Long id) throws EntityNotFoundException;

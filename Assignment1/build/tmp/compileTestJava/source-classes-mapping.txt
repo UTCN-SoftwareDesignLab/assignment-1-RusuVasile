@@ -1,8 +1,14 @@
-repositories/client/ClientRepositoryMySQLTest.java
- repositories.client.ClientRepositoryMySQLTest
 repositories/transaction/TransactionRepositoryMySQLTest.java
  repositories.transaction.TransactionRepositoryMySQLTest
-repositories/account/AccountRepositoryMySQLTest.java
- repositories.account.AccountRepositoryMySQLTest
 services/user/AuthenticationServiceMySQLTest.java
  services.user.AuthenticationServiceMySQLTest
+repositories/client/ClientRepositoryMySQLTest.java
+ repositories.client.ClientRepositoryMySQLTest
+repositories/account/AccountRepositoryMySQLTest.java
+ repositories.account.AccountRepositoryMySQLTest
+repositories/bill/BillRepositoryMySQLTest.java
+ repositories.bill.BillRepositoryMySQLTest
+services/transaction/TransactionServiceImplTest.java
+ services.transaction.TransactionServiceImplTest
+services/bill/BillServiceImplTest.java
+ services.bill.BillServiceImplTest

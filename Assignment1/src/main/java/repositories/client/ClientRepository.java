@@ -11,6 +11,10 @@ public interface ClientRepository {
 
     Client findById(Long id) throws EntityNotFoundException, EntityNotFoundException;
 
+    void removeById(Long id);
+
+    void updateAddress(String newAddress, Long id);
+
     boolean save(Client client);
 
     void removeAll();

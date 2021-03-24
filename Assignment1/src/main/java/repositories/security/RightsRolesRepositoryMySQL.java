@@ -1,8 +1,10 @@
 package repositories.security;
 
+import model.Account;
 import model.Right;
 import model.Role;
 import model.User;
+import repositories.EntityNotFoundException;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -63,22 +65,7 @@ public class RightsRolesRepositoryMySQL implements RightsRolesRepository {
         return null;
     }
 
-    @Override
-    public Role findRoleById(Long roleId) {
-        Statement statement;
-        try {
-            statement = connection.createStatement();
-            String fetchRoleSql = "Select * from " + ROLE + " where `id`=\'" + roleId + "\'";
-            ResultSet roleResultSet = statement.executeQuery(fetchRoleSql);
-            roleResultSet.next();
-            String roleTitle = roleResultSet.getString("role");
-            return new Role(roleId, roleTitle, null);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
 
-        return null;
-    }
 
     @Override
     public Right findRightByTitle(String right) {
@@ -130,6 +117,40 @@ public class RightsRolesRepositoryMySQL implements RightsRolesRepository {
         return null;
     }
 
+    @Override
+    public Long getIdByName(String name) throws SQLException, EntityNotFoundException {
+        try {
+
+            Statement statement=connection.createStatement();
+            String sql = "Select * from user where username=\'" + name + "\'";
+            ResultSet resultSet=statement.executeQuery(sql);
+            if (resultSet.next()) {
+                return resultSet.getLong("id");
+            } else {
+                throw new EntityNotFoundException(Long.parseLong(name), Account.class.getSimpleName());
+            }
+
+        }catch (SQLException | EntityNotFoundException e) {
+            e.printStackTrace();
+            throw new EntityNotFoundException(Long.parseLong(name), Account.class.getSimpleName());
+        }
+    }
+    @Override
+    public Role findRoleById(Long roleId) {
+        Statement statement;
+        try {
+            statement = connection.createStatement();
+            String fetchRoleSql = "Select * from " + ROLE + " where `id`=\'" + roleId + "\'";
+            ResultSet roleResultSet = statement.executeQuery(fetchRoleSql);
+            roleResultSet.next();
+            String roleTitle = roleResultSet.getString("role");
+            return new Role(roleId, roleTitle, null);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
     @Override
     public void addRoleRight(Long roleId, Long rightId) {
         try {

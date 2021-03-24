@@ -18,14 +18,13 @@ import static database.Constants.getRolesRights;
 public class Bootstraper {
     private static  RightsRolesRepository rightsRolesRepository;
 
-    public static void main(String[] args) throws SQLException {
-       // dropAll();
+    public void execute() throws SQLException {
+        dropAll();
 
         bootstrapTables();
 
         bootstrapUserData();
     }
-
     private static void dropAll() throws SQLException {
         for (String schema : SCHEMAS) {
             System.out.println("Dropping all tables in schema: " + schema);

@@ -5,11 +5,13 @@ import model.User;
 import model.builder.UserBuilder;
 import model.validation.Notification;
 import model.validation.UserValidator;
+import repositories.EntityNotFoundException;
 import repositories.security.RightsRolesRepository;
 import repositories.user.AuthenticationException;
 import repositories.user.UserRepository;
 
 import java.security.MessageDigest;
+import java.sql.SQLException;
 import java.util.Collections;
 
 import static database.Constants.Roles.EMPLOYEE;
@@ -51,6 +53,11 @@ public class AuthenticationServiceMySQL implements AuthenticationService {
     @Override
     public Notification<User> login(String username, String password) throws AuthenticationException {
         return userRepository.findByUsernameAndPassword(username, encodePassword(password));
+    }
+
+    @Override
+    public Long getIdByUsername(String name) throws SQLException, EntityNotFoundException {
+        return rightsRolesRepository.getIdByName(name);
     }
 
     @Override

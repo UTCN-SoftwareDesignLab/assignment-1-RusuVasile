@@ -10,7 +10,7 @@ public class Constants {
         public static final String TEST="test_bank";
         public static final String FINAL="bank";
 
-        public static final String[] SCHEMAS = new String[]{TEST};
+        public static final String[] SCHEMAS = new String[]{FINAL};
     }
 
     public static class Tables{

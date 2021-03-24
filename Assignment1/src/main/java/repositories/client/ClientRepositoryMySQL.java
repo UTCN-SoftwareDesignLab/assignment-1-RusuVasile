@@ -55,6 +55,32 @@ public class ClientRepositoryMySQL implements ClientRepository{
     }
 
     @Override
+    public void removeById(Long id) {
+        Connection connection=connectionWrapper.getConnection();
+        String sql="DELETE from client where CNP = "+id;
+
+        try{
+            Statement statement=connection.createStatement();
+            statement.executeUpdate(sql);
+        }catch (SQLException throwables){throwables.printStackTrace();}
+    }
+
+    @Override
+    public void updateAddress(String newAddress,Long id) {
+        try {
+            Connection connection = connectionWrapper.getConnection();
+            PreparedStatement insertStatement = connection
+                    .prepareStatement("UPDATE client SET address = ? WHERE id= "+id);
+            insertStatement.setString(1,newAddress);
+            insertStatement.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+
+        }
+    }
+
+    @Override
     public boolean save(Client client) {
         Connection connection = connectionWrapper.getConnection();
         String sql = "INSERT INTO client values (null, ?, ?, ?)";

@@ -17,6 +17,11 @@ public class AccountServiceImpl implements AccountService{
     }
 
     @Override
+    public List<String> findIds() {
+        return accountRepository.findAllIds();
+    }
+
+    @Override
     public List<Account> viewByClientId(Long client_id) throws EntityNotFoundException {
         return accountRepository.findByClientId(client_id);
     }
